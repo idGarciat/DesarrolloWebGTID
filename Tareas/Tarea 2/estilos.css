@@ -1,0 +1,37 @@
+.titulos{
+display: flex;
+justify-content:  center;
+align-items: flex-start;
+color: red;
+}
+i{
+    display: flex;
+    color: rgb(226, 0, 0);
+}
+.links a:visited{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    color: black;
+    background-color: aquamarine;
+}
+.links a:link{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    color: black;
+    background-color: rgb(0, 238, 255);
+}
+.videos{
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+}
+.fuente{
+    display:flex;
+    font-style: oblique;
+    font-size: 20px;
+    align-content: flex-start;
+    justify-content: flex-start;
+    
+}
