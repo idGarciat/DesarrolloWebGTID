@@ -1,0 +1,56 @@
+body {
+    background-image: url(Imagenes/fondo.jpg);
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+table{
+    
+    background-color: rgba(69, 142, 160, 0.8);;
+    border-collapse: collapse; /* Combina los bordes de las celdas adyacentes */
+}
+
+table img{
+    display: block; /* Asegura que la imagen sea un elemento de bloque */
+    margin: 0 auto;
+}
+
+table, th, td {
+    
+    border: 1px solid rgba(51, 56, 61, 0.7); /* Establece un borde sólido de 1px de ancho y color negro (#000) a la tabla y sus celdas */
+}
+
+.container{
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        border-radius: 10px;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px;
+       
+}
+
+.container img{
+    display: block; /* Asegura que la imagen sea un elemento de bloque */
+    margin: 0 auto;
+}
+.bg-white{
+    background-color: rgba(37, 66, 92, 0.7);
+}
+.color-white{
+    color: aliceblue;
+}
+
+.border-text{
+    border-radius: 5px;
+}
+.iconos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
