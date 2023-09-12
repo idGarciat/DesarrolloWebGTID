@@ -1,0 +1,45 @@
+body {
+    background-image: url(Imagenes/fondo.jpg);
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    padding: 50px;
+}
+
+
+table img{
+    display: block; /* Asegura que la imagen sea un elemento de bloque */
+    margin: 0 auto;
+}
+
+table, th, td {
+    
+    border: 1px solid rgba(51, 56, 61, 0.7); /* Establece un borde sólido de 1px de ancho y color negro (#000) a la tabla y sus celdas */
+}
+
+.container{
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 5px;
+        
+       
+}
+
+.container img{
+    display: block; /* Asegura que la imagen sea un elemento de bloque */
+    margin: 0 auto;
+}
+.bg-white{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.bg_color{
+    background-color: aquamarine;
+}
+.iconos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

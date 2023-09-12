@@ -20,59 +20,63 @@
     $resultado = $con->query($sql);
     if ($resultado->num_rows > 0) { ?>
 
-    <div class="container">
-        <table>
-            <tr>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>CU del estudiante</th>
-                <th>Carrera</th>
-                <th>Operaciones</th>
+        <div class="container">
+            <table>
+                <tr>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>CU del estudiante</th>
+                    <th>Carrera</th>
+                    <th>Operaciones</th>
 
-            </tr>
+                </tr>
 
-            <?php
+                <?php
                 while ($row = $resultado->fetch_assoc()) { ?>
-            <tr>
-                <td>
-                    <?php echo $row["nombres"]; ?>
-                </td>
-                <td>
-                    <?php echo $row["apellidos"]; ?>
-                </td>
-                <td>
-                    <?php echo $row["CU"]; ?>
-                </td>
-                <td>
-                    <?php echo $row["carrera"]; ?>
-                </td>
-                <td class="iconos"><a href="form_update_student.php?id=<?php echo $row["id"]; ?>">
-                <h1>
-                    Update alumno
-                </h1>
-                </td>
-            </tr>
+                    <tr>
+                        <td>
+                            <?php echo $row["nombres"]; ?>
+                        </td>
+                        <td>
+                            <?php echo $row["apellidos"]; ?>
+                        </td>
+                        <td>
+                            <?php echo $row["CU"]; ?>
+                        </td>
+                        <td>
+                            <?php echo $row["carrera"]; ?>
+                        </td>
+                        <td class="iconos"><a href="form_update_student.php?id=<?php echo $row["id"]; ?>">
+                                <h3>Actualizar</h3>
+                            </a>
+                            <a href="delete.php?id=<?php echo $row["id"] ?>">
+                                <h3>
+                                    Eliminar
+                                </h3>
+                            </a>
+                        </td>
+                    </tr>
 
-            <?php }
+                <?php }
 
                 ?>
 
-        </table>
-        <br>
-        <div class="container bg-white">
-            <a href="form_create_student.php"><img src="Imagenes/añadir.png" alt="añadir" width="100px"
-                    height="100px">
-                
+            </table>
+            <br>
+            <div class="container bg-white">
+                <a href="form_create_student.php">
+                    <h2>
+                        Añadir
+                    </h2>
                 </a>
-            <div>añadir un nuevo alumno</div>
-        </div>
+            </div>
 
-    </div>
+        </div>
 
 
     <?php } else { ?>
-    <br>
-    <div class="container bg-white">no hay registros en la base de datos </div>
+        <br>
+        <div class="container bg-white">no hay registros en la base de datos </div>
     <?php }
     ?>
 
