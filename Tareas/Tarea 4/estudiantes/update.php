@@ -8,6 +8,8 @@
 </head>
 <body>
 
+
+
 <?php
 include("conexion.php");
 $nombres=$_POST["nombres"];
