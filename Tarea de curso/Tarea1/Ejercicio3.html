@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par o Impar</title>
+</head>
+<body>
+    <h1>Determinar si un número es Par o Impar</h1>
+
+    <script>
+        function determinarParImpar(numero) {
+            if (numero % 2 === 0) {
+                return "par";
+            } else {
+                return "impar";
+            }
+        }
+
+        function comprobarNumero() {
+            var numero = parseInt(prompt("Introduce un número entero:"));
+
+            if (!isNaN(numero)) {
+                var resultado = determinarParImpar(numero);
+                alert("El número " + numero + " es " + resultado);
+            } else {
+                alert("Por favor, introduce un número válido.");
+            }
+        }
+    </script>
+
+    <button onclick="comprobarNumero()">Comprobar Número</button>
+</body>
+</html>

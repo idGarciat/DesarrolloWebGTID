@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Palíndromo</title>
+</head>
+<body>
+    <h1>Verificar Palíndromo</h1>
+
+    <script>
+        function comprobarPalindromo() {
+            var texto = prompt("Introduce una frase para verificar si es un palíndromo:");
+
+                var Stringchido = texto.toLowerCase().replace(/ /g, '');
+                var sies = true;
+
+                for (var i = 0; i < Math.floor(Stringchido.length / 2); i++) {
+                    if (Stringchido[i] !== Stringchido[Stringchido.length - 1 - i]) {
+                        sies = false;
+                        break;
+                    }
+                }
+
+                if (sies) {
+                    alert("La frase es un palíndromo.");
+                } else {
+                    alert("La frase no es un palíndromo.");
+                }
+        }
+    </script>
+
+    <button onclick="comprobarPalindromo()">Comprobar Palíndromo</button>
+</body>
+</html>

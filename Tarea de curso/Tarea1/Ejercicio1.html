@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Números</title>
+</head>
+<body>
+    <h1>Ordenar Números</h1>
+
+    <script>
+
+        var numero1 = parseFloat(prompt("Introduce el primer número:"));
+        var numero2 = parseFloat(prompt("Introduce el segundo número:"));
+        var numero3 = parseFloat(prompt("Introduce el tercer número:"));
+
+
+        var mayor, medio, menor;
+
+            if (numero1 >= numero2 && numero1 >= numero3) {
+                mayor = numero1;
+                if (numero2 >= numero3) {
+                    medio = numero2;
+                    menor = numero3;
+                } else {
+                    medio = numero3;
+                    menor = numero2;
+                }
+            } else if (numero2 >= numero1 && numero2 >= numero3) {
+                mayor = numero2;
+                if (numero1 >= numero3) {
+                    medio = numero1;
+                    menor = numero3;
+                } else {
+                    medio = numero3;
+                    menor = numero1;
+                }
+            } else {
+                mayor = numero3;
+                if (numero1 >= numero2) {
+                    medio = numero1;
+                    menor = numero2;
+                } else {
+                    medio = numero2;
+                    menor = numero1;
+                }
+            }
+
+
+            document.write("Números ordenados de mayor a menor: " + mayor + ", " + medio + ", " + menor);
+            
+
+    </script>
+</body>
+</html>

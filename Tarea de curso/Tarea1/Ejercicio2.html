@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Factorial</title>
+</head>
+<body>
+    <h1>Factorial</h1>
+
+    <script>
+        function calcularFactorial() {
+            var numero = parseInt(prompt("Introduce un número:"));
+
+            if (numero >= 0) {
+                var factorial = 1;
+
+                for (var i = 1; i <= numero; i++) {
+                    factorial *= i;
+                }
+
+                alert("El factorial de " + numero + " es: " + factorial);
+            } else {
+                alert("Por favor, introduce un número válido.");
+            }
+        }
+    </script>
+
+    <button onclick="calcularFactorial()">Calcular Factorial</button>
+</body>
+</html>
