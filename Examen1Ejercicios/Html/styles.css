@@ -8,8 +8,13 @@
 
 .encabezado{
     border: 1px solid black;
-    width: auto;
-    height: 200px;
+    height: 250px;
+    align-items: center;
+    margin: auto;
+    width: 900px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
 }
 
 .cuerpo{
