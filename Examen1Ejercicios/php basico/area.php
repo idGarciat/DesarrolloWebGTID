@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Área del Triángulo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
+    
     <h1>Área del Triángulo</h1>
     <?php
         // Verificamos si se enviaron los valores por el método GET
@@ -26,5 +29,6 @@
             echo "Por favor, ingrese valores para b y h.";
         }
     ?>
+
 </body>
 </html>
