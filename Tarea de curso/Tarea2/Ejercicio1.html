@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayor de 3</title>
+</head>
+
+<body>
+
+    <h1>Mayor de tres numeros</h1>
+    <input type="number" name="Numero1" id="Numero1"> <br> <br>
+    <input type="number" name="Numero2" id="Numero2"> <br> <br>
+    <input type="number" name="Numero3" id="Numero3"> <br> <br>
+
+
+
+    <Button onclick="calculi()">
+        Mayor
+    </Button>
+
+
+    <script>
+        function calculi() {
+
+            console.log(document.getElementById("Numero3").value)
+
+            var Numero1 = document.getElementById("Numero1").value;
+            var Numero2 = document.getElementById("Numero2").value;
+            var Numero3 = document.getElementById("Numero3").value;
+
+            document.getElementById("Numero1").style.backgroundColor = "white"
+            document.getElementById("Numero2").style.backgroundColor = "white"
+            document.getElementById("Numero3").style.backgroundColor = "white"
+
+
+
+            console.log(typeof(Numero1));
+
+            var mayor = Math.max(Numero1, Numero2, Numero3);
+
+            console.log(typeof(mayor));
+
+
+            console.log(mayor)
+
+            if (mayor == Numero1) {
+
+                console.log("Numero1");
+                document.getElementById("Numero1").style.backgroundColor = "red"
+
+            }  if (mayor == Numero2) {
+
+                console.log("Numero2")
+                document.getElementById("Numero2").style.backgroundColor = "red"
+
+            }  if (mayor == Numero3) {
+
+                console.log("Numero3")
+                document.getElementById("Numero3").style.backgroundColor = "red"
+            }
+        }
+    </script>
+</body>
+</html>

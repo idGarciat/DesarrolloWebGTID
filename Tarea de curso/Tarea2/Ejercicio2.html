@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <label for="n">Introduzca un numero </label>
+        <input type="number" id="n">
+    </div>
+
+    <div>
+        <button onclick="llenar()">Llenar</button>
+    </div>
+
+    <div id="inputs">
+
+    </div>
+    <script>
+        let inputs = document.getElementById("inputs");
+        function llenar() {
+
+            let n = parseInt(document.getElementById("n").value);
+
+            let ninputs = "";
+
+            console.log(n);
+
+            for (var i = 0; i < n; i++) {
+                ninputs += `<div>
+                            <input type="number" name="numeros"><span name="spans"> </span>
+                           </div>`;
+            }
+            ninputs += '<button onclick="calcular()">Calcular el mayor</button>';
+            inputs.innerHTML = ninputs;
+
+        }
+
+        function calcular() {
+
+            var spans = document.getElementsByName("spans");
+            let numeros = document.getElementsByName("numeros");
+
+            let n_mayor = 0;
+            let posicion = 0;
+
+            for (var i = 0; i < numeros.length; i++) {
+
+                numeros[i].style.backgroundColor = "white";
+                spans[i].innerHTML = "";
+
+                if (parseInt(numeros[i].value) > n_mayor) {
+                    n_mayor = parseInt(numeros[i].value);
+                    posicion = i;
+                }
+            }
+            spans[posicion].innerHTML = "&nbsp;Mayor";
+            numeros[posicion].style.backgroundColor = "yellow";
+        }
+    </script>
+
+</body>
+
+</html>
