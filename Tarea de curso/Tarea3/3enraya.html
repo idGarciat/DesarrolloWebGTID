@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tablon.css">
+</head>
+<body>
+    <!---Dibujando una tabla para el juego de 3 en raya-->
+
+    <table>
+        <tr>
+            <td class="celda" onclick="marcarCelda('celda1')" id="celda1"></td>
+            <td class="celda" onclick="marcarCelda('celda2')" id="celda2"></td>
+            <td class="celda" id="celda3"></td>
+        </tr>
+        <tr>
+            <td class="celda" id="celda4"></td>
+            <td class="celda" id="celda5"></td>
+            <td class="celda" id="celda6"></td>
+        </tr>
+        <tr>
+            <td class="celda" id="celda7"></td>
+            <td class="celda" id="celda8"></td>
+            <td class="celda" id="celda9"></td>
+        </tr>
+    
+
+    </table>
+    <script>
+        var turno='X';
+        function cambiar_turno(){
+            if(turno=='X'){
+
+                turno='O';
+            }else{
+                turno='X';
+            }
+        }
+        function marcarCelda(celda){
+            document.getElementById('mensaje').innerHTML='';
+            if(document.getElementById(celda).innerHTML=='&nbsp;'){
+
+                document.getElementById(celda).innerHTML=turno;
+                cambiar_turno();
+
+            }   
+            else{
+                alert('Celda ocupada');
+            }
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

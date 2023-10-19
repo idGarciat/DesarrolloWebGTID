@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tablon.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for=""></label>
+
+    <input type="password" readonly id="contra" onmouseout="mostrar()" onmouseover="mostrar()">
+    <button onclick="mostrar()">Mostrar</button>
+
+    <br>
+    <br>
+
+
+    <table>
+        <tr>
+            <td onclick="almacenar('1')" class="celda" id="celda1">1</td>
+            <td onclick="almacenar('2')" class="celda" id="celda2">2</td>
+            <td onclick="almacenar('3')" class="celda" id="celda3">3</td>
+        </tr>
+        <tr>
+            <td onclick="almacenar('4')" class="celda" id="celda4">4</td>
+            <td onclick="almacenar('5')" class="celda" id="celda5">5</td>
+            <td onclick="almacenar('6')" class="celda" id="celda6">6</td>
+        </tr>
+        <tr>
+            <td onclick="almacenar('7')" class="celda" id="celda7">7</td>
+            <td onclick="almacenar('8')" class="celda" id="celda8">8</td>
+            <td onclick="almacenar('9')" class="celda" id="celda9">9</td>
+        </tr>
+
+        <tr>
+            <td onclick="almacenar('*')" class="celda" id="celda7">*</td>
+            <td onclick="almacenar('0')" class="celda" id="celda8">0</td>
+            <td onclick="Limpiar()" class="celda" id="celda9">Limpiar</td>
+        </tr>
+
+    </table>
+
+    <script>
+
+        function mostrar() {
+            if (document.getElementById("contra").type == "text")
+            {
+                document.getElementById("contra").type = "password";
+            }
+
+            else 
+            {
+                document.getElementById("contra").type = "text";
+            }
+            
+
+        }
+        function Limpiar() {
+            document.getElementById("contra").value = "";
+        }
+
+        function almacenar(value) {
+            document.getElementById('contra').value += value;
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
