@@ -13,11 +13,19 @@
     <div>
       <button id="ocultar-btn">Ocultar Lista</button>
     </div>
-    <div id="lista">La lista ira aqui</div>
+    <div>
+      <button id="filas-btn" onclick="filascolor()">Filas</button>
+    </div>
+    <div id="lista">La lista ira aqui
+
+    </div>
+
     <script>
       mostrarBtn = document.getElementById("mostrar-btn");
       listaDiv = document.getElementById("lista");
       ocultarBtn = document.getElementById("ocultar-btn");
+      var filas = document.getElementsByTagName("td");
+
 
       mostrarBtn.addEventListener("click", () => {
         fetch("lista.php")
@@ -26,6 +34,7 @@
             table = "<table>";
             table +=
               "<tr><th>Nro</th><th>Apellidos</th><th>Nombres</th><th>Edad</th><th>Materia</th><th>Nota</th></tr>";
+
             data.forEach((item) => {
               table += `<tr>
 
@@ -66,6 +75,20 @@
       ocultarBtn.addEventListener("click", () => {
         listaDiv.innerHTML = "";
       });
+
+
+      function filascolor() {
+        for (var i = 0; i < filas.length; i++) {
+          contador = 0
+          if (i % 2 == 0) {
+            filas[i].style.backgroundColor = "gray";
+          } else {
+            filas[i].style.backgroundColor = "white";
+          }
+        }
+      }
+
     </script>
+
   </body>
 </html>
