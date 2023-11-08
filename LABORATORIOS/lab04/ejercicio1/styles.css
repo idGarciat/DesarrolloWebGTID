@@ -1,0 +1,28 @@
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td{
+    border: 1px solid black;
+    border-collapse:separate;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+th{
+    border: 1px solid black;
+    border-collapse:separate;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    background-color:cornflowerblue
+}
+.fondoplomo{
+    background-color: gray;
+}
+
+

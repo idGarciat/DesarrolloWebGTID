@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Agregar a lista</label>
+        <input type="text" name="articulo" id="articulo">
+        <button onclick="agregar()">Añadir</button>
+        <button onclick="limpiar()">Limpiar lista</button>
+    </div>
+    <div>
+        <ul id="lista">
+            La lista
+
+        </ul>
+    </div>
+    <script>
+        function agregar(){
+            articulo = document.getElementById('articulo').value;
+            lista = document.getElementById('lista');
+
+            element = document.createElement('li');
+            element.innerHTML = articulo;
+            if(articulo.includes('de')){
+                element.style.backgroundColor = 'yellow';
+            }
+            lista.appendChild(element);
+        }
+
+        function limpiar(){
+            lista = document.getElementById('lista');
+            lista.innerHTML = '';
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta 4</title>
+</head>
+<body>
+  <button id="login-btn">Login</button>
+  <div id="response"></div>
+
+  <script>
+    loginBtn = document.getElementById('login-btn');
+    responseDiv = document.getElementById('response');
+
+    loginBtn.addEventListener('click', () => {
+      fetch('login.html')
+      .then(response => response.text())
+      .then(html => {
+        loginDiv = document.createElement('div');
+        loginDiv.innerHTML = html;
+        usernameInput = loginDiv.querySelector('#username');
+        passwordInput = loginDiv.querySelector('#password');
+        submitBtn = loginDiv.querySelector('button[type="submit"]');
+
+        submitBtn.addEventListener('click', event => {
+          event.preventDefault();
+          username = usernameInput.value;
+          password = passwordInput.value;
+          data = new URLSearchParams();
+          data.append('username', username);
+          data.append('password', password);
+
+          fetch('autenticar.php', {
+            method: 'POST',
+            body: data
+          })
+          .then(response => response.text())
+          .then(message => {
+            if (message === 'autenticado correctamente') {
+              responseDiv.textContent = message;
+            } else {
+              responseDiv.textContent = 'No autenticado';
+            }
+          })
+          .catch(error => {
+            console.error(error);
+          });
+        });
+
+        responseDiv.innerHTML = '';
+        responseDiv.appendChild(loginDiv);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    });
+  </script>
+</body>
+</html>

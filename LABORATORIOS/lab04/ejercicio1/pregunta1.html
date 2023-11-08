@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button id="mostrar-btn">Mostrar</button>
+    </div>
+    <div>
+      <button id="ocultar-btn">Ocultar Lista</button>
+    </div>
+    <div id="lista">La lista ira aqui</div>
+    <script>
+      mostrarBtn = document.getElementById("mostrar-btn");
+      listaDiv = document.getElementById("lista");
+      ocultarBtn = document.getElementById("ocultar-btn");
+
+      mostrarBtn.addEventListener("click", () => {
+        fetch("lista.php")
+          .then((response) => response.json())
+          .then((data) => {
+            table = "<table>";
+            table +=
+              "<tr><th>Nro</th><th>Apellidos</th><th>Nombres</th><th>Edad</th><th>Materia</th><th>Nota</th></tr>";
+            data.forEach((item) => {
+              table += `<tr>
+
+                <td>
+                  ${item.nro}
+                </td>
+
+                <td>
+                ${item.apellidos}
+                </td>
+
+                <td>
+                ${item.nombres}
+                </td>
+
+                <td>
+                ${item.edad}
+                </td>
+
+                <td>
+                ${item.materia}
+                </td>
+
+                <td>
+                ${item.nota}
+                </td>
+
+                </tr>`;
+            });
+            table += "</table>";
+            listaDiv.innerHTML = table;
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      });
+
+      ocultarBtn.addEventListener("click", () => {
+        listaDiv.innerHTML = "";
+      });
+    </script>
+  </body>
+</html>
