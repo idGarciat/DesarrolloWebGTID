@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilocalendario.css" type="text/css"/>
+    
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="calendario" id="calendario">
+        <h1>Aqui ira el calendario</h1>
+      </div>
+
+      <div class="seleccionar">
+        <form action="../5tapregunta/calendario.php" method="get">
+
+
+            <div>Mes</div>
+            <div>
+              <select name="mes" id="mes">
+                <option value="">-</option>
+                <option value="01">enero</option>
+                <option value="02">febrero</option>
+                <option value="03">marzo</option>
+                <option value="04">abril</option>
+                <option value="05">mayo</option>
+                <option value="06">junio</option>
+                <option value="07">julio</option>
+                <option value="08">agosto</option>
+                <option value="09">septiembre</option>
+                <option value="10">octubre</option>
+                <option value="11">noviembre</option>
+                <option value="12">diciembre</option>
+              </select>
+            </div>
+    
+            <div>Año</div>
+            <div>
+                <select name="anio" id="anio">
+                    <option value="">-</option>
+                    <script>
+                      var fechaActual = new Date();
+                      var anioActual = fechaActual.getFullYear();
+                      for (var i = 1975; i <= anioActual; i++) {
+    
+                        document.write("<option value='" + i + "'>" + i + "</option>");
+    
+                      }
+                    </script>
+                    <option value="2023">2023</option>
+                  </select>
+            </div>
+
+            <button id="boton" onclick="javascript:MostrarCalendario()">Mostrar calendario</button>
+
+
+        </form>
+
+
+
+
+      </div>
+    </div>
+
+    <script src="../script.js"></script>
+
+  </body>
+</html>

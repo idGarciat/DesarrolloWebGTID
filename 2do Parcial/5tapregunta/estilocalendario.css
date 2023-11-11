@@ -1,0 +1,25 @@
+
+.calendario{
+
+    width: 70%;
+
+
+
+}
+
+.seleccionar{
+    display: flex;
+    width: 30%;
+    background-color: gray;
+
+}
+
+.main{
+
+    height: 300px;
+    width: 900px;
+    flex-direction: row;
+
+    border: 1px solid black;
+
+}

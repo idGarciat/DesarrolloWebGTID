@@ -1,0 +1,4 @@
+en la pregunta 5 el calendario es uno hecho propio porque no vi que  ya habia uno hecho
+funciona pero no muestra en pantalla utilizando ajax
+
+no cargaban los estilos. Nosé porque.

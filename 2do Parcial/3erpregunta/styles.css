@@ -1,0 +1,24 @@
+
+.principal{
+    border: 1px solid black;
+    display: flex;
+
+    height: 200px;
+    width: 900px;
+}
+
+.izquierda{
+
+    border: 1px solid black;
+
+    height: 200px;
+    width: 30%;
+}
+
+.derecha{
+
+    border: 1px solid black;
+
+    height: 200px;
+    width: 70%;
+}
