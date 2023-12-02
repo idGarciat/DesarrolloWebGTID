@@ -1,7 +1,7 @@
 
-function cargarBotones(abrir){
+function cargarBotones(abrir) {
 
-    document.getElementById("botones").innerHTML="";
+    document.getElementById("botones").innerHTML = "";
 
     var contenido = document.getElementById('botones');
 
@@ -19,7 +19,7 @@ function cargarBotones(abrir){
 
 }
 
-function cargarhistorial(){
+function cargarhistorial() {
     document.getElementById("historial").innerHTML = "El historial deberia ir aqui";
 
 
@@ -30,7 +30,7 @@ function cargarhistorial(){
 
 function cargarContenido(abrir) {
 
-    document.getElementById("principal").innerHTML="";
+    document.getElementById("principal").innerHTML = "";
 
     var contenido = document.getElementById('principal');
 
@@ -84,51 +84,57 @@ function generarTabla(opcion) {
     var resultadofactorial = 1;
 
     console.log("el numero es: " + numero);
-        
-        for (var i = 1; i <= hasta; i++) {
 
-            switch (opcion) {
-                case 1:
-                    html += `<div>${i + 1}+${numero}=${(i + 1) + numero}</div>`;
-                    break;
-                case 2:
-                    html += `<div>${i + 1}-${numero}=${(i + 1) - numero}</div>`;
-                    break;
-                case 3:{
-                    //console.log("entro al case 3");
+    for (var i = 1; i <= hasta; i++) {
 
-
-                    console.log("el factorial es: " + resultadofactorial);
+        switch (opcion) {
+            case 1:
+                html += `<div>${i + 1}+${numero}=${(i + 1) + numero}</div>`;
+                break;
+            case 2:
+                html += `<div>${i + 1}-${numero}=${(i + 1) - numero}</div>`;
+                break;
+            case 3: {
+                //console.log("entro al case 3");
 
 
-                    html += `<div>Factorial de ${numero + i-1} es: ${resultadofactorial}</div>`;
+                console.log("el factorial es: " + resultadofactorial);
 
 
-                }break;
-            }
+                html += `<div>Factorial de ${numero + i - 1} es: ${resultadofactorial}</div>`;
+
+
+            } break;
         }
-    
+    }
+
     resultado.innerHTML = html;
-    
+
 }
 
-function MostrarCalendario(){
+function MostrarCalendario() {
 
-    var boton = document.getElementById("boton");
-    var formulario = document.getElementById("formulario");
+    console.log("mostrando calendario");
+    // var boton = document.getElementById("boton");
+    // var formulario = document.getElementById("formulario");
     var calendario = document.getElementById("calendario");
-    archivo = "../5tapregunta/calendario.php?mes=" + mes + "&anio=" + anio
-  
-    boton.addEventListener("click", function(event) {
-      event.preventDefault();
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          calendario.innerHTML = xhr.responseText;
-        }
-      };
-      xhr.open("GET", archivo, true);
-      xhr.send();
-    });
+    var mes = document.getElementById("mes").value;
+    var anio = document.getElementById("anio").value;
 
+    console.log(calendario);
+
+    archivo = "../5tapregunta/calendario.php?mes="+mes +"&anio=" +anio;
+
+    console.log(archivo);
+    var ajax = new XMLHttpRequest();
+    ajax.open("get", archivo, true);
+    ajax.onreadystatechange = function () {
+
+        if (ajax.readyState == 4) {
+            calendario.innerHTML = ajax.responseText;
+        }
+    }
+    ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8")
+    ajax.send();
 }
+
